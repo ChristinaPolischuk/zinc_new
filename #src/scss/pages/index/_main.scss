@@ -1,0 +1,37 @@
+.section-main {
+	&__content {
+		position: relative;
+	}
+	&__title {
+		margin: 40px 0;
+		font-size: 235px;
+		line-height: 235px;
+		text-align: left;
+		@media screen and(max-width: 1200px) {
+			font-size: 150px;
+			line-height: 150px;
+			margin: 20px 0;
+		}
+		@media screen and(max-width: 576px) {
+			font-size: 95px;
+			line-height: 95px;
+			margin: 10px 0;
+		}
+	}
+	&__subtitle {
+		span {
+			display: block;
+		}
+	}
+	&__link {
+		position: absolute;
+		left: 0;
+		bottom: 60px;
+		@media screen and(max-width: 1200px) {
+			bottom: 30px;
+		}
+		@media screen and(max-width: 576px) {
+			bottom: 15px;
+		}
+	}
+}

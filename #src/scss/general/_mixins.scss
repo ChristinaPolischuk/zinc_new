@@ -1,0 +1,38 @@
+@mixin font($font_name, $file_name, $weight, $style) {
+	@font-face {
+		font-family: $font_name;
+		font-display: swap;
+		src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2");
+		font-weight: #{$weight};
+		font-style: #{$style};
+	}
+}
+
+@mixin btn($width, $height, $font_size, $bg1, $bg2) {
+	width: $width;
+	height: $height;
+	font-size: $font_size;
+	background: linear-gradient(90.02deg, $bg1 0.03%, $bg2);
+	box-shadow: 0px 5px 20px $bg2;
+	border-radius: 0px 37px;
+}
+
+@mixin size($a, $b: $a) {
+	width: $a;
+	height: $b;
+}
+
+@mixin placeholder {
+	::-webkit-input-placeholder {
+		@content;
+	}
+	:-moz-placeholder {
+		@content;
+	}
+	::-moz-placeholder {
+		@content;
+	}
+	:-ms-input-placeholder {
+		@content;
+	}
+}

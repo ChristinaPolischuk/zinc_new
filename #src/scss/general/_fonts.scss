@@ -1,0 +1,49 @@
+@font-face {
+	font-family: "Minion Pro";
+	font-weight: 400;
+	font-style: normal;
+	src: local("Minion Pro Regular"), local("MinionPro-Regular"), url("../fonts/MinionPro-Regular.woff2") format("woff2"),
+		url("../fonts/MinionPro-Regular.woff") format("woff"), url("../fonts/MinionPro-Regular.ttf") format("ttf");
+}
+
+@font-face {
+	font-family: "Suisse Intl";
+	font-weight: 300;
+	font-style: normal;
+	src: local("Suisse Intl Light"), local("SuisseIntl-Light"), url("../fonts/SuisseIntl-Light.woff2") format("woff2"),
+		url("../fonts/SuisseIntl-Light.woff") format("woff"), url("../fonts/SuisseIntl-Light.ttf") format("ttf");
+}
+
+@font-face {
+	font-family: "Suisse Intl";
+	font-weight: 400;
+	font-style: normal;
+	src: local("Suisse Intl Regular"), local("SuisseIntl-Regular"),
+		url("../fonts/SuisseIntl-Regular.woff2") format("woff2"), url("../fonts/SuisseIntl-Regular.woff") format("woff"),
+		url("../fonts/SuisseIntl-Regular.ttf") format("ttf");
+}
+
+@font-face {
+	font-family: "Suisse Intl";
+	font-weight: 500;
+	font-style: normal;
+	src: local("Suisse Intl Medium"), local("SuisseIntl-Medium"), url("../fonts/SuisseIntl-Medium.woff2") format("woff2"),
+		url("../fonts/SuisseIntl-Medium.woff") format("woff"), url("../fonts/SuisseIntl-Medium.ttf") format("ttf");
+}
+
+@font-face {
+	font-family: "Suisse Intl";
+	font-weight: 600;
+	font-style: normal;
+	src: local("Suisse Intl SemiBold"), local("SuisseIntl-SemiBold"),
+		url("../fonts/SuisseIntl-SemiBold.woff2") format("woff2"), url("../fonts/SuisseIntl-SemiBold.woff") format("woff"),
+		url("../fonts/SuisseIntl-SemiBold.ttf") format("ttf");
+}
+
+@font-face {
+	font-family: "ZINC 2020";
+	font-weight: 400;
+	font-style: normal;
+	src: local("ZINC 2020 Regular"), local("ZINC2020Regular"), url("../fonts/ZINC2020Regular.woff2") format("woff2"),
+		url("../fonts/ZINC2020Regular.woff") format("woff"), url("../fonts/ZINC2020Regular.ttf") format("ttf");
+}

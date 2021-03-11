@@ -1,0 +1,22 @@
+.section {
+	&-title {
+		font-family: $title_font;
+		font-weight: 400;
+		font-size: 86px;
+		line-height: 91px;
+		text-align: center;
+		@media screen and(max-width: 1200px) {
+			font-size: 66px;
+			line-height: 71px;
+		}
+		@media screen and(max-width: 576px) {
+			font-size: 40px;
+			line-height: 45px;
+		}
+		span {
+			display: block;
+			position: relative;
+			z-index: 1;
+		}
+	}
+}
