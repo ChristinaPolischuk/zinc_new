@@ -878,34 +878,20 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   // 		});
   // 	}
   // });
-
-  gsap.to(".parallax:not(:last-child)", {
-    yPercent: -100,
-    ease: Linear.easeNone,
-    stagger: .5,
-    scrollTrigger: {
-      trigger: ".parallax-wrapper",
-      start: "top top",
-      end: "+=400%",
-      scrub: 1,
-      pin: true
-    }
-  });
-  gsap.set(".parallax", {
-    zIndex: function zIndex(i, target, targets) {
-      return targets.length - i;
-    }
-  });
-  ScrollTrigger.create({
-    trigger: '.section-feedback',
-    pin: '.anchor',
-    start: 'top top',
-    endtrigger: '.section-feedback__content',
-    //end: 'bottom top-=' + window.innerHeight, 
-    end: function end() {
-      return 'bottom top-=' + window.innerHeight;
-    }
-  }); // var largeTL = gsap.timeline({
+  // gsap.to(".parallax:not(:last-child)", {
+  // 	yPercent: -100,
+  // 	ease: Linear.easeNone,
+  // 	stagger: .5,
+  // 	scrollTrigger: {
+  // 		trigger: ".parallax-wrapper",
+  // 		start: "top top",
+  // 		end: "+=400%",
+  // 		scrub: 1,
+  // 		pin: true
+  // 	}
+  // });
+  // gsap.set(".parallax", { zIndex: (i, target, targets) => targets.length - i });
+  // var largeTL = gsap.timeline({
   // 	scrollTrigger: {
   // 		trigger: '.start-trig',
   // 		pin: '.anchor',
@@ -928,8 +914,58 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   // 	end: '+=100%',
   // 	scrub: 1,
   // 	// animation: fadeInElements
-  // });
+  // })
 
+  var panels = gsap.utils.toArray(".parallax");
+  gsap.set(panels, {
+    zIndex: function zIndex(i, target, targets) {
+      return targets.length - i;
+    }
+  });
+
+  function sizePanels() {
+    var heightSoFar = 0;
+    panels.forEach(function (panel, i) {
+      if (i !== panels.length - 1) {
+        gsap.to(panel, {
+          yPercent: -100,
+          ease: "none",
+          scrollTrigger: {
+            start: heightSoFar,
+            end: heightSoFar + panel.offsetHeight,
+            scrub: true
+          }
+        });
+      }
+
+      heightSoFar += panel.offsetHeight;
+    });
+    gsap.set("body", {
+      height: heightSoFar
+    });
+  }
+
+  ScrollTrigger.addEventListener("refreshInit", function () {
+    // Kill off old ones
+    ScrollTrigger.getAll().forEach(function (ST) {
+      return ST.kill();
+    }); // Create new ones
+
+    sizePanels();
+  }); // Init
+
+  sizePanels();
+  ScrollTrigger.create({
+    trigger: '.section-feedback',
+    pin: '.anchor',
+    start: 'top top',
+    endtrigger: '.anchor2',
+    //end: 'bottom top-=' + window.innerHeight, 
+    end: function end() {
+      return 'bottom top-=' + window.innerHeight;
+    }
+  });
+  ;
   $(document).on("scroll", function () {
     if ($(document).scrollTop() > 50) {
       $(".header").addClass("shrink");
